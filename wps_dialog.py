@@ -36,6 +36,7 @@ from qgis.PyQt.QtWidgets import *
 from qgis.gui import *
 
 from .connect import *
+from .gml_source import *
 
 owslib_exists = True
 try:
@@ -48,6 +49,7 @@ except:
 # This loads your .ui file so that PyQt can populate your plugin with the elements from Qt Designer
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'wps_dialog_base.ui'))
+
 
 
 class WpsDialog(QtWidgets.QDialog, FORM_CLASS):
@@ -147,6 +149,8 @@ class WpsDialog(QtWidgets.QDialog, FORM_CLASS):
             if isinstance(self.input_items[x], QgsMapLayerComboBox):
                 # TODO check input type and export into it (GML, GeoPackage, etc.)
                 cdi = ComplexDataInput('http://rain.fsv.cvut.cz/geodata/test.gml')
+                # Does not work
+                cdi = GmlSource()
                 #cdi = ComplexDataInput('file:///home/jencek/test.gml')
                 myinputs.append((x, cdi))
             else:
