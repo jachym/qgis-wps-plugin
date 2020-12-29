@@ -151,7 +151,7 @@ class WpsDialog(QtWidgets.QDialog, FORM_CLASS):
                 cdi = ComplexDataInput('http://rain.fsv.cvut.cz/geodata/test.gml')
                 # Does not work
                 cdi = GmlSource()
-                #cdi = ComplexDataInput('file:///home/jencek/test.gml')
+                # cdi = ComplexDataInput('file:///home/jencek/test.gml')
                 myinputs.append((x, cdi))
             else:
                 # TODO check also other types than just QLineEdit

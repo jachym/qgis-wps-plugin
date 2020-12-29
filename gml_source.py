@@ -8,4 +8,4 @@ from lxml import etree
 
 class GmlSource(IComplexDataInput):
     def getXml(self):
-        return etree.parse("/home/jencek/test.gml").getroot()
+        return etree.parse("/home/jencek/test2.gml").getroot()
